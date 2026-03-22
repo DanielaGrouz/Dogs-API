@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         previewImg.alt = `Enquiry for ${dog.name}`;
     }
 
-    // הגדרת מאזין לשליחת הטופס
     const form = document.getElementById('adoption-form');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
