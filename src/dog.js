@@ -1,4 +1,4 @@
-import { fetchDogById, getDogIdFromURL, formatBoolean } from './script.js';
+import {fetchDogById, getDogIdFromURL, formatBoolean, initAdoptionQuest} from './script.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const dogId = getDogIdFromURL();
@@ -66,3 +66,5 @@ function animateCountUp(element, target) {
         }
     }, stepTime);
 }
+
+initAdoptionQuest(1);

@@ -40,3 +40,31 @@ export async function fetchDogById(id) {
         return null;
     }
 }
+
+export function initAdoptionQuest(currentStep) {
+    const steps = [
+        { name: "Find a friend", icon: "🔍" },
+        { name: "Get to know them", icon: "🐶" },
+        { name: "Send love", icon: "📩" }
+    ];
+
+    const questContainer = document.createElement('div');
+    questContainer.className = 'adoption-quest container';
+
+    let html = '<div class="quest-steps">';
+    steps.forEach((step, index) => {
+        const isActive = index === currentStep ? 'active' : '';
+        const isCompleted = index < currentStep ? 'completed' : '';
+        html += `
+            <div class="step ${isActive} ${isCompleted}">
+                <span class="step-icon">${isCompleted ? '✅' : step.icon}</span>
+                <span class="step-name">${step.name}</span>
+            </div>
+            ${index < steps.length - 1 ? '<div class="step-line"></div>' : ''}
+        `;
+    });
+    html += '</div>';
+
+    questContainer.innerHTML = html;
+    document.body.appendChild(questContainer);
+}

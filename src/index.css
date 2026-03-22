@@ -98,3 +98,22 @@
     color: #e74c3c;
     content: '❤️';
 }
+
+.live-status {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.status-hot { color: #e67e22; background: #fef5ec; }
+.status-pending { color: #7f8c8d; background: #f4f4f4; }
+.status-loved { color: #e74c3c; background: #fdedec; }
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}

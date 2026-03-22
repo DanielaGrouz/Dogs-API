@@ -1,4 +1,4 @@
-import { fetchDogById, getDogIdFromURL } from './script.js';
+import {fetchDogById, getDogIdFromURL, initAdoptionQuest} from './script.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const dogId = getDogIdFromURL();
@@ -38,3 +38,5 @@ function createConfetti() {
         setTimeout(() => confetti.remove(), 6000);
     }
 }
+
+initAdoptionQuest(3);

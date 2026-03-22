@@ -1,4 +1,4 @@
-import { fetchDogById, getDogIdFromURL } from './script.js';
+import {fetchDogById, getDogIdFromURL, initAdoptionQuest} from './script.js';
 
 let dogId = null;
 
@@ -21,3 +21,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         window.location.href = `thankyou.html?id=${dogId}`;
     });
 });
+
+initAdoptionQuest(2);

@@ -1,4 +1,4 @@
-import { fetchAllDogs } from './script.js';
+import {fetchAllDogs, initAdoptionQuest} from './script.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const dogs = await fetchAllDogs();
@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         { text: 'New Arrival ✨', class: 'badge-new' },
         { text: 'Most Playful 🎾', class: 'badge-playful' },
         { text: 'Super Sweet 🍬', class: 'badge-sweet' }
+    ];
+
+    const liveStatusOptions = [
+        { text: "🔥 3 people are looking now", class: "status-hot" },
+        { text: "⏳ Pending Adoption", class: "status-pending" },
+        { text: "💖 Most Loved this week", class: "status-loved" },
+        { text: "", class: "" }
     ];
 
     dogs.forEach((dog, index) => {
@@ -31,12 +38,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                 });
             }
 
+            const randomStatus = liveStatusOptions[Math.floor(Math.random() * liveStatusOptions.length)];
+            if (randomStatus.text) {
+                const statusEl = document.createElement('div');
+                statusEl.className = `live-status ${randomStatus.class}`;
+                statusEl.textContent = randomStatus.text;
+                card.appendChild(statusEl);
+            }
+
             const img = card.querySelector('img');
             img.src = dog.first_image_url;
             img.alt = `Photo of ${dog.name}`;
+
 
             card.querySelector('.dog-name').textContent = dog.name;
             card.querySelector('.more-info-link').href = `dog.html?id=${index}`;
         }
     });
 });
+
+initAdoptionQuest(0);
