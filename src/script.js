@@ -42,3 +42,26 @@ export async function fetchData(url) {
         return null;
     }
 }
+
+export async function fetchAllDogs() {
+    try {
+        const response = await fetch(MOCK_API_URL);
+        if (!response.ok) throw new Error("Failed to fetch all dogs");
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
+
+
+export async function fetchDogById(id) {
+    try {
+        const response = await fetch(`${MOCK_API_URL}/${id}`);
+        if (!response.ok) throw new Error(`Failed to fetch dog with id ${id}`);
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
