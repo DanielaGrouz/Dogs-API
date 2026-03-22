@@ -1,4 +1,4 @@
-export const MOCK_API_URL = "https://ee2c45c6-d711-4975-ae79-30d08231c795.mock.pstmn.io/dogs";
+export const MOCK_API_URL = "https://76046bc0-f35c-4004-939a-af147e115b68.mock.pstmn.io/dogs";
 
 export function getDogIdFromURL() {
     /**
