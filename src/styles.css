@@ -1,4 +1,4 @@
-/* Reset & Box Sizing */
+/* Reset & Global Box Sizing */
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +7,14 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
 }
 
 /* Centered Container */
@@ -25,23 +25,34 @@ body {
     text-align: center;
 }
 
-/* Common Link Styles */
+/* Common Link & Button Resets */
 a {
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-/* Common Button Styles */
-.btn, button, .submit-btn, .adopt-button, .home-btn {
+button, .btn, .submit-btn, .adopt-button, .home-btn {
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    font-family: inherit;
     font-weight: bold;
     text-align: center;
     transition: background 0.3s, opacity 0.3s;
+    display: inline-block;
 }
 
-/* Dog images global rule */
+button:hover, .btn:hover {
+    opacity: 0.8;
+}
+
+/* Global Image Rule to avoid distortion */
 img {
-    object-fit: cover; /* מונע עיוות של התמונות כפי שנדרש */
+    object-fit: cover;
+    max-width: 100%;
+}
+
+/* Utility Class for spacing */
+.mt-20 {
+    margin-top: 20px;
 }
