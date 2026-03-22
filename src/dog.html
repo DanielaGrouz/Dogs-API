@@ -20,6 +20,7 @@
     </div>
 
     <div class="info-section">
+        <div class="match-meter"><strong>Your Match:</strong><span id="match-percentage">Calculate...</span></div>
         <div class="data-row"><strong>Name:</strong> <span id="dog-name"></span></div>
         <div class="data-row"><strong>Breed:</strong> <span id="dog-breed"></span></div>
         <div class="data-row"><strong>Age:</strong> <span id="dog-age"></span></div>
@@ -30,6 +31,13 @@
         <div class="story-box">
             <strong>Story:</strong>
             <p id="dog-story"></p>
+        </div>
+
+        <div class="loyalty-progress">
+            <p>Adoption Progress: <span id="progress-text">Viewing Profile</span></p>
+            <div class="progress-bar-container">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
         </div>
 
         <div class="actions">

@@ -15,3 +15,43 @@
     border: 4px solid #fff;
     object-fit: cover;
 }
+
+
+/* מאפיינים משותפים לכל פיסת קונפטי */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+}
+
+/* הגדרת הצבעים ב-CSS בלבד */
+.confetti-gold { background-color: #f1c40f; }
+.confetti-red { background-color: #e74c3c; }
+.confetti-blue { background-color: #3498db; }
+.confetti-green { background-color: #2ecc71; }
+.confetti-purple { background-color: #9b59b6; }
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        /* שימוש בערך קבוע לסיבוב, או כמה וריאציות של אנימציה */
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+.success-icon {
+    display: inline-block;
+    font-size: 3rem;
+    animation: wag 0.8s infinite alternate ease-in-out;
+}
+
+@keyframes wag {
+    from { transform: rotate(-15deg); }
+    to { transform: rotate(15deg); }
+}

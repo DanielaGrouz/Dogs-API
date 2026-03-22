@@ -39,3 +39,62 @@
     color: white;
     border-radius: 5px;
 }
+
+.dog-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* מעבר חלק */
+}
+
+.dog-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.dog-card img {
+    transition: transform 0.5s ease;
+}
+
+.dog-card:hover img {
+    transform: scale(1.05);
+}
+
+.dog-card {
+    position: relative;
+}
+
+.dog-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.badge-staff { background-color: #f1c40f; color: #333; }
+.badge-new { background-color: #2ecc71; }
+.badge-playful { background-color: #e67e22; }
+.badge-sweet { background-color: #9b59b6; }
+
+.like-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+}
+
+.like-button.liked {
+    color: #e74c3c;
+    content: '❤️';
+}

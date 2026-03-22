@@ -57,3 +57,19 @@
         flex-direction: column;
     }
 }
+
+.progress-bar-container {
+    width: 100%;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 33%; /* שלב 1 מתוך 3 */
+    background-color: #3498db;
+    transition: width 0.5s ease-in-out;
+}
