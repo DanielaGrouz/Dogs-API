@@ -57,4 +57,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
+// Show a step in the progress bar
 initAdoptionQuest(0);

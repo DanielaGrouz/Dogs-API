@@ -67,4 +67,5 @@ function animateCountUp(element, target) {
     }, stepTime);
 }
 
+// Show a step in the progress bar
 initAdoptionQuest(1);

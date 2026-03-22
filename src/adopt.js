@@ -22,4 +22,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 });
 
+// show a step in the progress bar
 initAdoptionQuest(2);
