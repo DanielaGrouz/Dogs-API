@@ -5,10 +5,10 @@ A multi-page, interactive dog adoption platform built as part of a Software Qual
 ## 🛠️ Tech Stack
 * **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6 Modules).
 * **Backend Mock:** Postman REST API Mock Server.
-* **Design:** Custom Pure CSS (No frameworks allowed).
+* **Design:** Custom Pure CSS (No frameworks).
 
 ## 📂 Project Structure
-All files are located in the `src` folder as required:
+All files are located in the `src` folder:
 * **HTML Files:** `index.html`, `dog.html`, `adopt.html`, `thankyou.html`.
 * **CSS Files:** `styles.css` (shared), `index.css`, `dog.css`, `adopt.css`, `thankyou.css`.
 * **JS Files:** `script.js` (shared utilities/API), `index.js`, `dog.js`, `adopt.js`, `thankyou.js`.
@@ -33,5 +33,3 @@ To enhance user engagement, several interactive elements were added:
 2.  Open the project using a local server (e.g., **WebStorm's** built-in server or **Live Server** in VS Code) to avoid CORS issues.
 3.  Launch `index.html` in Google Chrome.
 
----
-*Developed by Daniela - 2026*
