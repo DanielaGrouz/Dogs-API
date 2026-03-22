@@ -41,7 +41,7 @@
 }
 
 .dog-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* מעבר חלק */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dog-card:hover {

@@ -69,7 +69,7 @@
 
 .progress-fill {
     height: 100%;
-    width: 33%; /* שלב 1 מתוך 3 */
+    width: 33%;
     background-color: #3498db;
     transition: width 0.5s ease-in-out;
 }

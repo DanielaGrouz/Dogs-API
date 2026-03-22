@@ -17,7 +17,6 @@
 }
 
 
-/* מאפיינים משותפים לכל פיסת קונפטי */
 .confetti {
     position: fixed;
     width: 10px;
@@ -28,7 +27,6 @@
     animation: fall 3s linear forwards;
 }
 
-/* הגדרת הצבעים ב-CSS בלבד */
 .confetti-gold { background-color: #f1c40f; }
 .confetti-red { background-color: #e74c3c; }
 .confetti-blue { background-color: #3498db; }
@@ -40,7 +38,6 @@
         transform: translateY(0) rotate(0deg);
     }
     100% {
-        /* שימוש בערך קבוע לסיבוב, או כמה וריאציות של אנימציה */
         transform: translateY(110vh) rotate(720deg);
     }
 }

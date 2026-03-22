@@ -1,4 +1,3 @@
-/* Reset & Global Box Sizing */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,6 @@ body {
     align-items: center;
 }
 
-/* Centered Container */
 .container {
     width: 100%;
     max-width: 1000px;
@@ -25,7 +23,6 @@ body {
     text-align: center;
 }
 
-/* Common Link & Button Resets */
 a {
     text-decoration: none;
     transition: all 0.3s ease;
@@ -46,13 +43,11 @@ button:hover, .btn:hover {
     opacity: 0.8;
 }
 
-/* Global Image Rule to avoid distortion */
 img {
     object-fit: cover;
     max-width: 100%;
 }
 
-/* Utility Class for spacing */
 .mt-20 {
     margin-top: 20px;
 }
