@@ -1,29 +1,24 @@
-import { MOCK_API_URL, fetchData, getDogIdFromURL } from './script.js';
+import { fetchDogById, getDogIdFromURL } from './script.js';
 
 let dogId = null;
 
-async function init() {
+document.addEventListener('DOMContentLoaded', async () => {
     dogId = getDogIdFromURL();
-    if (dogId === null) {
-        console.error("No dog ID found in URL");
-        return;
-    }
+    if (dogId === null) return;
 
-    const dog = await fetchData(`${MOCK_API_URL}/${dogId}`);
+    const dog = await fetchDogById(dogId);
 
     if (dog) {
         document.getElementById('dog-name').textContent = dog.name;
-        document.getElementById('preview-img').src = dog.first_image_url;
-        document.getElementById('preview-img').alt = dog.name;
+        const previewImg = document.getElementById('preview-img');
+        previewImg.src = dog.first_image_url;
+        previewImg.alt = `Enquiry for ${dog.name}`;
     }
-}
 
-const form = document.getElementById('adoption-form');
-form.addEventListener('submit', function(e) {
-    // The form does not need to actually send data to a server.
-    e.preventDefault();
-    window.location.href = `thankyou.html?id=${dogId}`;
+    // הגדרת מאזין לשליחת הטופס
+    const form = document.getElementById('adoption-form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.location.href = `thankyou.html?id=${dogId}`;
+    });
 });
-
-// wait for all the HTML and CSS to finish loading, and only then run the function
-window.onload = init;

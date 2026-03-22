@@ -1,13 +1,10 @@
-import { MOCK_API_URL, fetchData, getDogIdFromURL, formatBoolean } from './script.js';
+import { fetchDogById, getDogIdFromURL, formatBoolean } from './script.js';
 
-async function loadDogDetails() {
+document.addEventListener('DOMContentLoaded', async () => {
     const dogId = getDogIdFromURL();
-    if (dogId === null) {
-        console.error("No dog ID found");
-        return;
-    }
+    if (dogId === null) return;
 
-    const dog = await fetchData(`${MOCK_API_URL}/${dogId}`);
+    const dog = await fetchDogById(dogId);
 
     if (dog) {
         document.getElementById('dog-name-header').textContent = dog.name;
@@ -30,7 +27,7 @@ async function loadDogDetails() {
 
         setupNavigation(dogId);
     }
-}
+});
 
 function setupNavigation(dogId) {
     const prevBtn = document.getElementById('prev-btn');
@@ -39,15 +36,12 @@ function setupNavigation(dogId) {
     if (dogId <= 0) {
         prevBtn.style.visibility = 'hidden';
     } else {
-        prevBtn.onclick = () => { window.location.href = `dog.html?id=${dogId - 1}`; };
+        prevBtn.onclick = () => window.location.href = `dog.html?id=${dogId - 1}`;
     }
 
     if (dogId >= 5) {
         nextBtn.style.visibility = 'hidden';
     } else {
-        nextBtn.onclick = () => { window.location.href = `dog.html?id=${dogId + 1}`; };
+        nextBtn.onclick = () => window.location.href = `dog.html?id=${dogId + 1}`;
     }
 }
-
-// wait for all the HTML and CSS to finish loading, and only then run the function
-window.onload = loadDogDetails;

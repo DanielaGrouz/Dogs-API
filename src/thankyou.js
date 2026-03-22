@@ -1,20 +1,15 @@
-import { MOCK_API_URL, fetchData, getDogIdFromURL } from './script.js';
+import { fetchDogById, getDogIdFromURL } from './script.js';
 
-async function init() {
+document.addEventListener('DOMContentLoaded', async () => {
     const dogId = getDogIdFromURL();
-    if (dogId === null) {
-        console.error("No dog ID found in URL");
-        return;
-    }
+    if (dogId === null) return;
 
-    const dog = await fetchData(`${MOCK_API_URL}/${dogId}`);
+    const dog = await fetchDogById(dogId);
 
     if (dog) {
         document.getElementById('dog-name-display').textContent = dog.name;
-        document.getElementById('dog-preview').src = dog.first_image_url;
-        document.getElementById('dog-preview').alt = `Photo of ${dog.name}`;
+        const dogPreview = document.getElementById('dog-preview');
+        dogPreview.src = dog.first_image_url;
+        dogPreview.alt = `Thank you for adopting ${dog.name}`;
     }
-}
-
-// wait for all the HTML and CSS to finish loading, and only then run the function
-window.onload = init;
+});

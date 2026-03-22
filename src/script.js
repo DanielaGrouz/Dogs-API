@@ -19,30 +19,6 @@ export function formatBoolean(value) {
     return "Unknown";
 }
 
-
-export function navigateTo(page, id = null) {
-    /**
-     *  Helper function for page navigation
-     * */
-    const url = id !== null ? `${page}?id=${id}` : page;
-    window.location.href = url;
-}
-
-
-export async function fetchData(url) {
-    /**
-    * Generic Fetch function with error handling
-     * */
-    try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return await response.json();
-    } catch (error) {
-        console.error("Fetch error:", error);
-        return null;
-    }
-}
-
 export async function fetchAllDogs() {
     try {
         const response = await fetch(MOCK_API_URL);
@@ -53,7 +29,6 @@ export async function fetchAllDogs() {
         return [];
     }
 }
-
 
 export async function fetchDogById(id) {
     try {
